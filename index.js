@@ -27,3 +27,5 @@ const writeStream = fs.createWriteStream('./test-copy.txt');
 
 
 readStream.pipe(writeStream);
+
+//exercise 4 does the same thing as exercise 3.
