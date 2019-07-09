@@ -12,5 +12,22 @@ describe('event emitter tests', () => {
     ee.emit('we did it');
   }); 
 
-  
+  it('emits and listens to events with data', done => {
+    const ee = new EventEmitter();
+
+    ee.on('newDog', dog => {
+      expect(dog).toEqual({
+        name: 'Nolan',
+        age: 14,
+        weight: '55lbs'
+      });
+      done();
+    });
+
+    ee.emit('newDog', {
+      name: 'Nolan',
+      age: 14,
+      weight: '55lbs'
+    });
+  });
 });
